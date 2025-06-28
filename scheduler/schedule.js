@@ -4,6 +4,8 @@ const contacts = require("../data/contacts.json");
 const { generateMessage } = require("../messages/generateMessage");
 
 function scheduleMessages(client) {
+  let scheduledCount = 0;
+
   for (const contact of contacts) {
     const { number, name, schedules, image } = contact;
 
@@ -19,11 +21,17 @@ function scheduleMessages(client) {
 
       schedule.scheduleJob(rule, async () => {
         const message = generateMessage(contact);
-        console.log(`📅 Sending message to ${number} (${name}) at ${timeStr}`);
+        console.log(`📤 Enviando mensagem para ${number} (${name}) às ${timeStr}`);
         await sendMessage(client, number, message, image);
       });
+
+      console.log(`📅 Agendando mensagem para ${number} (${name}) às ${timeStr}`);
+      scheduledCount++;
     }
   }
+
+  console.log("\n📦 Resumo:");
+  console.log(`🗓️ Mensagens agendadas: ${scheduledCount}`);
 }
 
 module.exports = scheduleMessages;
