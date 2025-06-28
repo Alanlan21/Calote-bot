@@ -1,0 +1,16 @@
+[
+  {
+    "numero": "559999999999",
+    "nome": "Fulano",
+    "valor": 123.45,
+    "horarios": ["08:00", "13:00", "18:00"],
+    "imagem": "imagens/exemplo.png"
+  },
+  {
+    "numero": "559888888888",
+    "nome": "Beltrano",
+    "valor": 456.78,
+    "horarios": ["09:00", "15:00", "20:00"],
+    "imagem": "imagens/exemplo.png"
+  }
+]
