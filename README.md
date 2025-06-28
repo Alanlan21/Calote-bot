@@ -57,7 +57,7 @@ Edite o arquivo `contacts.json` com os dados reais (mantendo as chaves em inglê
 ### 3. Rode o bot
 
 ```bash
-node calote.js
+npm start
 ```
 
 Durante a execução, será exibido um QR Code no terminal.
