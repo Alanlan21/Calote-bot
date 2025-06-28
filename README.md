@@ -4,9 +4,9 @@
 
 Começou como um script simples em Python + Selenium, feito só pra cobrar um amigo que me devia.
 
-Aí... mais uma pessoa me devia.
+Até... mais uma pessoa passar a me dever.
 
-E eu pensei: *isso já não é mais uma cobrança, é uma operação*.
+Aí eu pensei: *isso não é mais uma cobrança, é uma operação*.
 
 Migrei para Node.js, descobri o [`venom-bot`](https://github.com/orkestral/venom) e transformei a lógica em algo modular, automatizado e levemente passivo-agressivo.
 
