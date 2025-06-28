@@ -1,44 +1,42 @@
 const { create } = require("venom-bot");
-const agendarEnvios = require("./scheduler/agendador.js");
-const { enviarParaTodos } = require("./sender/enviarMensagem.js");
-
+const scheduleMessages = require("./scheduler/schedule.js");
+const { sendToAll } = require("./sender/sendMessage.js");
 const inquirer = require("inquirer");
 
-async function iniciarBot() {
+async function startBot() {
   try {
     const client = await create({
       session: "calote-session",
       disableWelcome: true,
-      headless: true, // opcional: true para esconder o navegador
+      headless: true,
     });
 
-    // Espera 1 segundo para garantir que o client esteja totalmente pronto
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    const { acao } = await inquirer.prompt([
+    const { action } = await inquirer.prompt([
       {
         type: "list",
-        name: "acao",
-        message: "Escolha uma ação:",
+        name: "action",
+        message: "Choose an action:",
         choices: [
-          { name: "1. Enviar mensagem imediatamente", value: "imediato" },
-          { name: "2. Apenas agendar mensagens", value: "agendado" },
+          { name: "1. Send message immediately", value: "immediate" },
+          { name: "2. Schedule messages only", value: "scheduled" },
         ],
       },
     ]);
 
-    if (acao === "imediato") {
-      await enviarParaTodos(client);
-      console.log("✅ Mensagens enviadas!");
+    if (action === "immediate") {
+      await sendToAll(client);
+      console.log("✅ Messages sent!");
     }
 
-    if (acao === "agendado") {
-      agendarEnvios(client);
-      console.log("🕒 Agendamento iniciado.");
+    if (action === "scheduled") {
+      scheduleMessages(client);
+      console.log("🕒 Scheduling started.");
     }
-  } catch (erro) {
-    console.error("Erro ao iniciar o bot:", erro);
+  } catch (error) {
+    console.error("Error starting bot:", error);
   }
 }
 
-iniciarBot();
+startBot();
