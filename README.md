@@ -60,9 +60,15 @@ Edite o arquivo `contacts.json` com os dados reais (mantendo as chaves em inglê
 node calote.js
 ```
 
+Durante a execução, será exibido um QR Code no terminal.
+Abra o WhatsApp no celular, vá em *Dispositivos conectados* e escaneie o código.
+
+Aguarde até aparecer a confirmação de que o bot está conectado.
+
 Escolha no menu se deseja enviar as mensagens imediatamente ou agendá-las para os horários definidos.
 
 ---
+
 
 ## 📁 Estrutura do projeto
 
