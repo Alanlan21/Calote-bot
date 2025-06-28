@@ -85,7 +85,7 @@ calote-bot/
 ├── sender/
 │   └── sendMessage.js        # Envio efetivo das mensagens
 └── images/
-    └── exemplo-lucas.png     # Imagem opcional para anexar
+    └── exemplo.png     # Imagem opcional para anexar
 ```
 
 ---
