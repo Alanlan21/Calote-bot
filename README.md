@@ -32,7 +32,7 @@ npm install
 
 ### 2. Configure sua lista de contatos
 
-Copie o arquivo de exemplo:
+Renomeie o arquivo de exemplo "contacts-exemple.json" para "contacts.json":
 
 ```bash
 cp data/contacts-example.json data/contacts.json
