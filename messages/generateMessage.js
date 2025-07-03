@@ -9,16 +9,14 @@ function generateMessage(contact) {
     amount: contact.amount?.toFixed(2),
   };
 
-  if (contact.dueDate) {
-    const daysLate = now.diff(dayjs(contact.dueDate), "day");
-    variables.daysLate = daysLate;
-  }
+  // Calculate days late
+  const baseDate = contact.dueDate || contact.startDate;
 
-  if (contact.startDate) {
-    const diffMs = now.diff(dayjs(contact.startDate));
-    variables.days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-    variables.hours = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
-    variables.minutes = Math.floor((diffMs / (1000 * 60)) % 60);
+  if (baseDate) {
+    const diff = now.diff(dayjs(baseDate));
+    variables.days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    variables.hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    variables.minutes = Math.floor((diff / (1000 * 60)) % 60);
   }
 
   return message.replace(/{{(.*?)}}/g, (_, key) => variables[key] ?? "");

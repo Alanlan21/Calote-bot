@@ -1,16 +1,20 @@
 [
   {
-    "numero": "559999999999",
-    "nome": "Fulano",
-    "valor": 123.45,
-    "horarios": ["08:00", "13:00", "18:00"],
-    "imagem": "imagens/exemplo.png"
+    "name": "Fulano",
+    "number": "8599999999",
+    "image": "images/exemplo.png",
+    "schedules": ["08:00", "11:00", "14:00", "17:00", "20:00", "23:00"],
+    "amount": 330.0,
+    "startDate": "2024-03-25T17:25:00",
+    "template": "Prezado {{name}},\n\nAté o momento, não identifiquei o pagamento referente à compra no valor de R${{amount}}, o qual, segundo sua própria mensagem seria quitado até o dia 25/04/2025. \n\nJá se passaram {{days}} dias desde o combinado.\n De toda forma, reforço a necessidade da regularização imediata.\nConto com sua compreensão — e desta vez, com sua pontualidade.\n\nAtenciosamente,\n\nCiclano"
   },
   {
-    "numero": "559888888888",
-    "nome": "Beltrano",
-    "valor": 456.78,
-    "horarios": ["09:00", "15:00", "20:00"],
-    "imagem": "imagens/exemplo.png"
+    "name": "Beltrano",
+    "number": "85999999999",
+    "image": "images/exemplo.png",
+    "schedules": ["08:00", "11:00", "14:00", "17:00", "20:00", "23:00"],
+    "amount": 330.0,
+    "startDate": "2024-03-25T17:25:00",
+    "template": "Cadê os R${{amount}}?\nNada ainda?\nJá se passaram {{days}} dias, {{hours}} horas e {{minutes}} minutos."
   }
 ]

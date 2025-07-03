@@ -16,7 +16,7 @@ async function sendMessage(client, number, message, image) {
       await client.sendText(`${number}@c.us`, message);
     }
 
-    console.log("✅ Message sent:", number);
+    console.log("✅ Message sent");
   } catch (error) {
     console.error("❌ Failed to send to", number, ":", error.message);
     throw error;
